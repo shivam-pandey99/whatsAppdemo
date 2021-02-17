@@ -8,27 +8,32 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import {createMaterialTopTabNavigator} from "@react-navigation/material-top-tabs";
 import Modalopn from './popup/modal'
-import { NewGroupScreen , Broadcast , Starred, Web, Payments,Settings ,Buttonfun } from './popup/newgroup';
+
+import { Newgroup } from './popup/newgroup';
+import {Broadcast} from './popup/broadcast'
+import {Payment} from './popup/payment'
+import {Web} from "./popup/web";
+import {Setting}from "./popup/setting"
+import {Starred}from "./popup/starred";
 
 import tab3 from './component/chat';
 import tab1 from './component/statusec';
 import tab2 from './component/callsec';
+
 const Initialpage = () =>  {
-let screenwidth = Dimensions.get("window").width;
 
 const MainStack = createStackNavigator();
-const RootStack = createStackNavigator();
 const Tab = createMaterialTopTabNavigator();
 
-
-function TabStack()
-{
+function TabStack(){
   return <Tab.Navigator
   initialRouteName="chat"
       tabBarOptions={{
         activeTintColor: '#FFFFFF',
-        inactiveTintColor: '#F8F8F8',
+        inactiveTintColor: '#fff',
         style: {
+          shadowOpacity: 0 ,
+          elevation: 0 ,
           borderTopWidth : 3,
           borderTopColor: '#075e54',
           backgroundColor: '#075e54',
@@ -37,11 +42,16 @@ function TabStack()
           borderBottomColor: 'white',
           borderBottomWidth: 2.5,
         },
+        showIcon: true ,        
       }}>
     <Tab.Screen 
     name="camera" 
     component={CameraScreen}
-    options={{ headerTitle: props => <FontAwesomeIcon icon={faCamera} />}}
+    options={{
+      tabBarLabel: () => null,
+      tabBarIcon : () => <FontAwesomeIcon icon={faCamera} color={'white'} size={18}/> 
+    }}
+    
     />
       <Tab.Screen 
        name="chat"
@@ -59,23 +69,21 @@ return (
   <MainStack.Navigator
     initialRouteName="chat"
     screenOptions={{
-      headerStyle: { backgroundColor: '#075e54' },
+      headerStyle: { backgroundColor: '#075e54',shadowOpacity:0,elevation:0 },
       headerTintColor: '#fff',
       headerTitleStyle: { fontWeight: '200' }
     }}>
     <MainStack.Screen name="Whatsapp" component={TabStack} options={{ title: 'Whatsapp', headerRight: () => (<Modalopn/>)}}/>
-    <MainStack.Screen name="NewGroup" component = {NewGroupScreen} />
+    <MainStack.Screen name="NewGroup" component={Newgroup} />
+    <MainStack.Screen name="BroadCast" component={Broadcast} />
+    <MainStack.Screen name="Web" component={Web} />
+    <MainStack.Screen name="Starred" component={Starred} />
+    <MainStack.Screen name="Payment" component={Payment} />
+    <MainStack.Screen name="Settings" component={Setting} />
+
   </MainStack.Navigator>
 </NavigationContainer>
  );
 }
-
-  
-  
-  const App = () => {
-      return(
-          <Text>CameraScreen</Text>
-      );
-  };
 
 export default Initialpage ;
