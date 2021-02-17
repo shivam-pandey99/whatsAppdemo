@@ -16,7 +16,7 @@ export function Buttonfun ({ navigation }) {
 }
 
 
-export function NewGroupScreen ({ navigation  }) {
+export function Newgroup ({ navigation  }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Details Screen</Text>
@@ -30,39 +30,12 @@ export function NewGroupScreen ({ navigation  }) {
 }
 
 
-export const   Broadcast = ( { navigation }) =>{
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>make new Broadcast</Text>
-    </View>
-  );
-}
-export const  Starred = ( { navigation })  => {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>see Starred message </Text>
-    </View>
-  );
-}
-export const  Web = ({ navigation }) => {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Search you on web</Text>
-    </View>
-  );
-}
+
+
 export const  Payments = ( { navigation }) => {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>hello..! do payments</Text>
-    </View>
-  );
-}
-
-export const Settings = ( { navigation })  => {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>hello settings page</Text>
     </View>
   );
 }
