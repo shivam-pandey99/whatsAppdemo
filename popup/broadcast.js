@@ -1,13 +1,47 @@
-import React from 'react';
-import { View, Text, Button } from 'react-native';
+import React from "react";
+import {View , Image, TouchableOpacity ,Text } from "react-native";
+
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
+import {faLaugh , faPaperclip, faCamera , faPaperPlane, faMicrophone } from '@fortawesome/free-solid-svg-icons'
+
+import {useNavigation } from '@react-navigation/native'
 
 
-export const Broadcast = () =>{
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>make new Broadcast</Text>
-    </View>
-  );
+
+function List(props) {
+  const navigation = useNavigation();
+  return(
+  <View style={{flexDirection: 'row' }}>
+      <Image source={props.ImageUri} 
+      style={{width: 50 , height: 50 , borderRadius: 250 , margin:10 ,}}></Image>
+      <View style={{flexDirection: 'row',flex:1 ,margin:14
+       , height: 50, borderBottomWidth: 0.5 , borderBottomColor: 'grey'}}>
+      <TouchableOpacity onPress={ () => navigation.navigate('Shivam Pandey' ,{name: props.name})}  >
+      <View style={{marginTop: 3,}}>
+          <Text style={{fontSize: 19,  }}>{props.name}</Text>
+      </View>
+      </TouchableOpacity>
+      </View>
+  </View>
+      );
+  }
+
+  
+export function Broadcast () {
+  return(
+<View>
+<List
+  name= 'Bill gates'
+  ImageUri={require('../data/image/download.png')}
+  /> 
+   <List
+   name= 'Mark Zuckerburg'
+   ImageUri={require('../data/image/DSCN8403.png')}
+   />
+  </View>
+);
 }
+
+
 
 

@@ -23,13 +23,13 @@ return(
   <Modal  transparent={true} visible={modalopen} onRequestClose={()=>setModalopen(false)}>
     <TouchableOpacity onPress={() => setModalopen(false) } style={{ flex:1 , margin:4}}>  
     <View style={{margin:5,height: 320,borderRadius: 3 , width:230,backgroundColor: 'white', position: 'absolute', alignSelf: 'flex-end',}}>
-<TouchableOpacity onPress={() =>{setModalopen(false) ; navigation.navigate('NewGroup')} }>
+<TouchableOpacity onPress={() =>{setModalopen(false) ; navigation.navigate('New Group')} }>
     <Text style={{ fontSize: 17 ,margin: 15 }}>New Group</Text>
 </TouchableOpacity>
 <TouchableOpacity onPress={() => {setModalopen(false) ; navigation.navigate('BroadCast')}}>
     <Text style={{ fontSize: 17 ,margin: 15 }}>New Broadcast</Text>
 </TouchableOpacity>
-<TouchableOpacity onPress={() => {setModalopen(false) ; navigation.navigate('Web')}}>
+<TouchableOpacity onPress={() => {setModalopen(false) ; navigation.navigate('Scan QRcode')}}>
     <Text style={{ fontSize: 17 ,margin: 15 }}>WhatsApp Web</Text>
 </TouchableOpacity>
 <TouchableOpacity onPress={() =>{setModalopen(false) ;  navigation.navigate('Starred')}}>
