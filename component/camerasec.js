@@ -43,7 +43,7 @@ const CameraScreen = () =>  {
           style={styles.preview}
           type = {camType}
           autoFocus = { RNCamera.Constants.AutoFocus.on}
-          flashMode = {RNCamera.Constants.FlashMode.auto}
+          flashMode = {flash}
           androidCameraPermissionOptions={{
             title: 'Permission to use camera',
             message: 'We need your permission to use your camera',
